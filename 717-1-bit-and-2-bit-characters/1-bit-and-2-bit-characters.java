@@ -1,28 +1,15 @@
 class Solution {
     public boolean isOneBitCharacter(int[] bits) {
-        int n = bits.length;
-        if(n<=1){
-            return true;
-        }
-        int i=0;
-        boolean temp = true; 
-        while(i<n){
-            if(bits[i]==0){
-                temp= true;
-                if(n-i<=1){
-                    break;
-                }
-                i++;
-            }
-            if(bits[i]==1){
-                temp=false;
-                if(n-i<=2){
-                    break;
-                }
-                i+=2;
+        int i = 0;
+
+        while (i < bits.length - 1) {
+            if (bits[i] == 1) {
+                i += 2; // 2-bit character
+            } else {
+                i += 1; // 1-bit character
             }
         }
-        return temp;
-        
+
+        return i == bits.length - 1;
     }
 }
