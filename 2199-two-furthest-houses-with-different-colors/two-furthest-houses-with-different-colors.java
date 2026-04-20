@@ -20,7 +20,7 @@ class Solution {
         int fh = 0;
         int maxDiff = 0;
         for(int i = 0; i < n; i++){
-            for(int j = 1; j<n ; j++){
+            for(int j = i+1; j<n ; j++){
                 if(colors[i]!=colors[j] && Math.abs(i-j)>maxDiff ){
                     maxDiff = Math.abs(i-j);
                 }
